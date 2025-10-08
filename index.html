@@ -89,7 +89,7 @@
 
                 }
             </script>
-            <p> <input type="text" name="num1" /> + <input type="text" name="num2">
+            <p> <input type="text" name="addnum1" /> + <input type="text" name="num2">
                 <input type="button" value="=" onclick="calculate();">
                 <label id="result"> ? </label>
             </p>
@@ -121,8 +121,8 @@
         <div class="practice">
             <h1> Practice - Calculate Square</h1>
             Calculating Square:
-            <input type="text" id="num" placeholder="Type in a number"> <sup> 2 </sup> =
-            <label id="result"> ? </label>
+            <input type="text" id="squarenum" placeholder="Type in a number"> <sup> 2 </sup> =
+            <label id="squareresult"> ? </label>
 
         </div>
 
@@ -136,7 +136,7 @@
 
             <input type="button" id="tryit" value="Click and Display"> 
 
-            <div id="message"> 
+            <div id="innerHTMLmessage"> 
             </div>
 
 
@@ -199,7 +199,7 @@
             <p>
                 <input type="button" value="Check Premium">
             </p>
-            <p id="result">
+            <p id="premiumresult">
 
             </p>
 
@@ -228,7 +228,7 @@
             </p>
 
             <!-- output section -->
-            <div id="output">
+            <div id="loopoutput">
 
 
             </div>
@@ -313,13 +313,13 @@
             <div>
                 <form>
                     <p>
-                        Name: <input type="text" id="name">
+                        Name: <input type="text" id="guestname">
                     </p>
                     <p>
                         Check in: <input type="date" id="checkin"> Check out: <input type="date" id="checkout">
                     </p>
                     <p>
-                        Number of guest: <input type="number" id="num" min="0" max="5">
+                        Number of guest: <input type="number" id="guestnum" min="0" max="5">
                     </p>
                     <p>
                         Room Type: <select id="room">
