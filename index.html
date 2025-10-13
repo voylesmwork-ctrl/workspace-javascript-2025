@@ -39,15 +39,39 @@
         <div class="practice">
             <h1> Variable and Arithemetic Operation</h1>
             <p> Practice on variables </p>
+            <script>
+                var a = 3;
+                var b = 4;
 
+                var c = a + b;
+                var d = a - b;
+                var e = a * b;
+                var f = a / b;
+
+                document.write(c + " " + d + " " + e + " " + f);
+
+                document.write("\n");
+
+                var name = "name"; name = 4.5;
+                name = name + 5;
+                document.write("Welcome, " + name);
+            </script>
 
         </div>
 
         <div class="practice">
             <h1> JavaScript Escape Sequence</h1>
+            
             <p> Write an image to the page </p>
+            <script>
+                document.write("<img src=\"img/die1.png\" alt=\"die\">");
+            </script>
 
             <p> Write a table to the page </p>
+            
+            <script>
+                document.write("<table border=\"1\"><tr><td>1<\/td><\/tr><\/table>");
+            </script>
 
         </div>
 
@@ -55,7 +79,10 @@
             <h1>Window and Document Object </h1>
             <p> Try alert, open, location, url </p>
             <script>
-
+                document.write("The document is modified on " + document.lastModified);
+                //window.open("https://www.google.com");
+                //window.location.assign("https://www.usca.edu");
+                //window.alert("alarm or smth ig :/");
             </script>
 
         </div>

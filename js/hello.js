@@ -5,6 +5,7 @@
 
 // get the date and time 
 var today = new Date();
+var currentHour = today.getHours();
 
 
 // display the greeting message 
@@ -13,4 +14,5 @@ var today = new Date();
 
 
 // write to the document 
+var greetings = "any";
 document.write(greetings);
