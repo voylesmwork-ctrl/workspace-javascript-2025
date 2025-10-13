@@ -101,8 +101,14 @@
             <p id="p1"> Paragraph Number One </p>
             <p id="p2"> Paragraph Number two </p>
             <p id="p3"> Paragraph Number three </p>
-            <p>Please write JavaScript code to change the content of each paragraph.​
-            <p>
+            <p>Please write JavaScript code to change the content of each paragraph.
+                <script>
+                    const pE1 = document.querySelector('#p1').innerHTML = "<b> I CHANGED </b>";
+                    const pE2 = document.querySelector('#p2').innerHTML = "<i> i changed too </i>";
+                    const pE3 = document.querySelector('#p3').innerHTML = "I changed, too.";
+                </script>
+
+            </p>
 
 
         </div>
