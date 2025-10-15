@@ -118,8 +118,10 @@
             <p> Please enter your numbers </p>
             <script>
                 function calculate() {
-
-
+                    var num1 = parseInt(document.getElementsByName("addnum1")[0].value);
+                    var num2 = parseInt(document.getElementsByName("num2")[0].value);
+                    var num3 = num1 + num2;
+                    const res = document.getElementById("result").innerHTML = num3;
                 }
             </script>
             <p> <input type="text" name="addnum1" /> + <input type="text" name="num2">
@@ -134,17 +136,30 @@
             <form>
                 <p>
                     <label> Name:
-                        <input type="text" id="cName">
+                        <input type="text" id="uName">
                     </label>
                 </p>
 
-                <p id="message">
-
+                <p id="welmess">
+                    
                 </p>
+                <script>
+                    function welcome() {
+                        var nameE = document.getElementById('uName').value;
+                        document.getElementById('welmess').textContent = "Welcome";
+                    }
+                    function specialMessage() {
+                        alert("I can see your face.");
+                    }
+                    const name = document.querySelector("#uName");
+                    name.addEventListener('blur', welcome, false);
+                    const email = document.getElementById('uEmail');
+                    email.addEventListener('click', specialMessage);
+                </script>
 
                 <p>
                     <label> Email:
-                        <input type="text" id="cEmail">
+                        <input type="text" id="uEmail">
                     </label>
                 </p>
             </form>
@@ -156,7 +171,14 @@
             Calculating Square:
             <input type="text" id="squarenum" placeholder="Type in a number"> <sup> 2 </sup> =
             <label id="squareresult"> ? </label>
-
+            <script>
+                function calc() {
+                    var side = parseInt(document.getElementById('squarenum').value);
+                    document.getElementById('squareresult').textContent = side * side;
+                }
+                var num = document.querySelector("#squarenum");
+                num.addEventListener('change', calc);
+            </script>
         </div>
 
         <div class="practice">
@@ -171,6 +193,16 @@
 
             <div id="innerHTMLmessage"> 
             </div>
+
+            <script>
+                function display() {
+                    var txt = document.querySelector("#code").value;
+                    document.getElementById('innerHTMLmessage').textContent = txt;
+                    document.getElementById('innerHTMLmessage').innerHTML = txt;
+                }
+                var btn = document.querySelector("#tryit");
+                btn.addEventListener('click', display);
+            </script>
 
 
         </div>
