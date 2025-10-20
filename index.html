@@ -154,7 +154,7 @@
                     const name = document.querySelector("#uName");
                     name.addEventListener('blur', welcome, false);
                     const email = document.getElementById('uEmail');
-                    email.addEventListener('click', specialMessage);
+                    // email.addEventListener('click', specialMessage);
                 </script>
 
                 <p>
@@ -226,19 +226,63 @@
             </p>
 
             <script type="text/javascript">
-
-
-
+                function conditionChange() {
+                    var year = document.getElementById('year').value;
+                    var condition = document.getElementById('condition').value;
+                    if (year === "2004" && condition === "Good") {
+                        document.getElementById('price').textContent = "$2000";
+                    } else if (year === "2004" && condition === "Fair") {
+                        document.getElementById('price').textContent = "$1500";
+                    } else if (year === "2003" && condition === "Good") {
+                        document.getElementById('price').textContent = "$1500";
+                    } else {
+                        document.getElementById('price').textContent = "$1000";
+                    }
+                }
+                var yr = document.getElementById('year');
+                var cond = document.getElementById('condition');
+                yr.addEventListener('change', conditionChange, false);
+                cond.addEventListener('change', conditionChange, false);
             </script>
 
         </div>
 
         <div class="practice">
             <h1> Decision Statement - Switch</h1>
-            <p> Choose your favorite theme(warm, cool, hot)
+            <p> Choose your favorite theme(warm, cool, hot, cold, neutral)
                 <input type="text" id="theme">
             </p>
 
+            <script>
+                function changeTheme() {
+                    console.log("works");
+                    var theme = document.getElementById('theme').value;
+                    var bcolor = "white";
+                    switch (theme) {
+                        case "warm":
+                            bcolor = "orange";
+                            break;
+                        case "cool":
+                            bcolor = "blue";
+                            break;
+                        case "hot":
+                            bcolor = "red";
+                            break;
+                        case "cold":
+                            bcolor = "purple";
+                            break;
+                        case "neutral":
+                            bcolor = "green";
+                            break;
+                        default:
+                            bcolor = "white"
+                            break;
+                    }
+                    document.body.style.backgroundColor=bcolor;
+                }
+                var themeE = document.getElementById('theme');
+                themeE.addEventListener('blur', changeTheme, false);
+            </script>
         </div>
 
 
@@ -246,9 +290,9 @@
         <div class="practice">
             <h1> Switch practice -- Insurance Application</h1>
             <p> Choose your coverage
-                <input type="radio" name="coverage" value="100000">100000
-                <input type="radio" name="coverage" value="200000">200000
-                <input type="radio" name="coverage" value="300000">300000
+                <input type="radio" id="" name="coverage" value="100000">100000
+                <input type="radio" id="" name="coverage" value="200000">200000
+                <input type="radio" id="" name="coverage" value="300000">300000
 
             </p>
             <p> Choose your age group.
@@ -262,11 +306,99 @@
 
             </p>
             <p>
-                <input type="button" value="Check Premium">
+                <input type="button" id="checkpremium" value="Check Premium">
             </p>
             <p id="premiumresult">
 
             </p>
+
+            <script>
+                function calcPremium() {
+                    console.log("works");
+                    var coverage = document.querySelector('input[name="coverage"]:checked');
+                    var ageGroup = document.getElementById('agegroup').selectedIndex;
+                    switch (coverage) {
+                        case "100000":
+                            switch (ageGroup) {
+                                case "under 30":
+                                    
+                                    break;
+                                case "30-34":
+                                    
+                                    break;
+                                case "35-39":
+                                    
+                                    break;
+                                case "40-44":
+
+                                    break;
+                                default:
+                                    
+                                    break;
+                            }
+                            break;
+                        case "200000":
+                            switch (ageGroup) {
+                                case "under 30":
+                                    
+                                    break;
+                                case "30-34":
+                                    
+                                    break;
+                                case "35-39":
+                                    
+                                    break;
+                                case "40-44":
+
+                                    break;
+                                default:
+                                    
+                                    break;
+                            }
+                            break;
+                        case "300000":
+                            switch (ageGroup) {
+                                case "under 30":
+                                    
+                                    break;
+                                case "30-34":
+                                    
+                                    break;
+                                case "35-39":
+                                    
+                                    break;
+                                case "40-44":
+
+                                    break;
+                                default:
+                                    
+                                    break;
+                            }
+                            break;
+                        default:
+                            switch (ageGroup) {
+                                case "under 30":
+                                    
+                                    break;
+                                case "30-34":
+                                    
+                                    break;
+                                case "35-39":
+                                    
+                                    break;
+                                case "40-44":
+
+                                    break;
+                                default:
+                                    
+                                    break;
+                            }
+                            break;
+                    }
+                }
+                var btnE = document.querySelector("#checkpremium");
+                btnE.addEventListener('click', calcPremium);
+            </script>
 
         </div>
 
