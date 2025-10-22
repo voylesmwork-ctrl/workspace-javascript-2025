@@ -14,24 +14,24 @@
 <body>
     <div class="wrapper">
         <div class="panelLeft">
-            
+
         </div>
 
         <div class="practice">
             <h1>Hello world in JavaScript
             </h1>
             <p>
-                Please display a hello world message in JavaScript. 
+                Please display a hello world message in JavaScript.
                 <script>
                     document.title = "JavaScript Basic -- In class practice -- Matthew Voyles";
                     // use document.write to display a message
                     document.write("Hello, world.");
                     // use console.log to display a message
                     console.log("Print for debugging");
-                    
+
                 </script>
             </p>
-            <p> Please import external file hello.js here. 
+            <p> Please import external file hello.js here.
                 <script src="js/hello.js"></script>
             </p>
         </div>
@@ -61,14 +61,14 @@
 
         <div class="practice">
             <h1> JavaScript Escape Sequence</h1>
-            
+
             <p> Write an image to the page </p>
             <script>
                 document.write("<img src=\"img/die1.png\" alt=\"die\">");
             </script>
 
             <p> Write a table to the page </p>
-            
+
             <script>
                 document.write("<table border=\"1\"><tr><td>1<\/td><\/tr><\/table>");
             </script>
@@ -141,7 +141,7 @@
                 </p>
 
                 <p id="welmess">
-                    
+
                 </p>
                 <script>
                     function welcome() {
@@ -185,13 +185,13 @@
             <h1> Difference between textcontent and innerHTML</h1>
             <p> HTML Try it Editor </p>
             <p>ENTER your code </p>
-            <textarea cols="40" rows="20" id="code">  
+            <textarea cols="40" rows="20" id="code">
 
             </textarea>
 
-            <input type="button" id="tryit" value="Click and Display"> 
+            <input type="button" id="tryit" value="Click and Display">
 
-            <div id="innerHTMLmessage"> 
+            <div id="innerHTMLmessage">
             </div>
 
             <script>
@@ -214,12 +214,14 @@
                 <select id="year">
                     <option> 2003</option>
                     <option> 2004</option>
-                </select>.</p>
+                </select>.
+            </p>
             <p>Please enter the condition of the car
                 <select id="condition">
                     <option> Fair</option>
                     <option> Good</option>
-                </select>.</p>
+                </select>.
+            </p>
 
             <p id="price">
 
@@ -278,7 +280,7 @@
                             bcolor = "white"
                             break;
                     }
-                    document.body.style.backgroundColor=bcolor;
+                    document.body.style.backgroundColor = bcolor;
                 }
                 var themeE = document.getElementById('theme');
                 themeE.addEventListener('blur', changeTheme, false);
@@ -290,9 +292,9 @@
         <div class="practice">
             <h1> Switch practice -- Insurance Application</h1>
             <p> Choose your coverage
-                <input type="radio" id="" name="coverage" value="100000">100000
-                <input type="radio" id="" name="coverage" value="200000">200000
-                <input type="radio" id="" name="coverage" value="300000">300000
+                <input type="radio" name="coverage" value="100000">100000
+                <input type="radio" name="coverage" value="200000">200000
+                <input type="radio" name="coverage" value="300000">300000
 
             </p>
             <p> Choose your age group.
@@ -301,6 +303,10 @@
                     <option> 30-34 </option>
                     <option> 35-39</option>
                     <option> 40-44 </option>
+                    <option> 45-49 </option>
+                    <option> 50-54 </option>
+                    <option> 55-59 </option>
+                    <option> 60-64 </option>
 
                 </select>
 
@@ -314,90 +320,45 @@
 
             <script>
                 function calcPremium() {
-                    console.log("works");
-                    var coverage = document.querySelector('input[name="coverage"]:checked');
+                    var coverage = parseFloat(document.querySelector('input[name="coverage"]:checked').value);
                     var ageGroup = document.getElementById('agegroup').selectedIndex;
-                    switch (coverage) {
-                        case "100000":
-                            switch (ageGroup) {
-                                case "under 30":
-                                    
-                                    break;
-                                case "30-34":
-                                    
-                                    break;
-                                case "35-39":
-                                    
-                                    break;
-                                case "40-44":
-
-                                    break;
-                                default:
-                                    
-                                    break;
-                            }
+                    var cpa;
+                    var base = 10;
+                    switch (ageGroup) {
+                        case 0:
+                            cpa = 0.08;
                             break;
-                        case "200000":
-                            switch (ageGroup) {
-                                case "under 30":
-                                    
-                                    break;
-                                case "30-34":
-                                    
-                                    break;
-                                case "35-39":
-                                    
-                                    break;
-                                case "40-44":
-
-                                    break;
-                                default:
-                                    
-                                    break;
-                            }
+                        case 1:
+                            cpa = 0.09;
                             break;
-                        case "300000":
-                            switch (ageGroup) {
-                                case "under 30":
-                                    
-                                    break;
-                                case "30-34":
-                                    
-                                    break;
-                                case "35-39":
-                                    
-                                    break;
-                                case "40-44":
-
-                                    break;
-                                default:
-                                    
-                                    break;
-                            }
+                        case 2:
+                            cpa = 0.11;
+                            break;
+                        case 3:
+                            cpa = 0.17;
+                            break;
+                        case 4:
+                            cpa = 0.29;
+                            break;
+                        case 5:
+                            cpa = 0.48;
+                            break;
+                        case 6:
+                            cpa = 0.75;
+                            break;
+                        case 7:
+                            cpa = 1.17;
                             break;
                         default:
-                            switch (ageGroup) {
-                                case "under 30":
-                                    
-                                    break;
-                                case "30-34":
-                                    
-                                    break;
-                                case "35-39":
-                                    
-                                    break;
-                                case "40-44":
-
-                                    break;
-                                default:
-                                    
-                                    break;
-                            }
+                            cpa = -1;
                             break;
                     }
+                    var prem = base + cpa*coverage;
+                    prem = prem.toFixed(2);
+                    document.getElementById('premiumresult').textContent = "$" + prem;
                 }
                 var btnE = document.querySelector("#checkpremium");
-                btnE.addEventListener('click', calcPremium);
+                btnE.addEventListener('click', calcPremium,false);
             </script>
 
         </div>
@@ -412,6 +373,17 @@
             <p>
                 <input type="button" value="Click for Square">
             </p>
+
+            <script>
+                function sqrloop() {
+                    var nVal = parseInt(document.getElementById("inputnumber1").value);
+                    for (let i = 1; i < nVal+1; i++) {
+                        var sqr = i + i;
+                        document.write(i + "^2 = " + sqr + "   ");
+                    }
+                }
+                document.querySelector('input[value="Click for Square"]').addEventListener('click', sqrloop);
+            </script>
 
         </div>
 
@@ -429,6 +401,17 @@
 
 
             </div>
+
+            <script>
+                function multable() {
+                    var nVal = parseInt(document.getElementById("inputnumber1").value);
+                    for (let i = 1; i < nVal+1; i++) {
+                        var sqr = i + i;
+                        document.write(i + "^2 = " + sqr + "   ");
+                    }
+                }
+                document.querySelector('input[value="Click for multiplication table"]').addEventListener('click', multable);
+            </script>
 
         </div>
 
@@ -496,9 +479,9 @@
             <div class="img-container-hide">
                 <img src="img/usca5.jpg" alt="usca">
             </div>
-			<script>
-				
-			</script>
+            <script>
+
+            </script>
 
 
         </div>
@@ -540,10 +523,10 @@
 
 
         <div class="practice">
-            <h1>  HTML Canvas </h1>
+            <h1> HTML Canvas </h1>
             <canvas id="myCanvas" width="200" height="100" style="border:1px solid #000000;">
-                    Your browser does not support the HTML5 canvas tag.</canvas>
-            <div id="drawing">  </div>
+                Your browser does not support the HTML5 canvas tag.</canvas>
+            <div id="drawing"> </div>
             <p> Some P5.js examples </p>
             <script src="https://cdn.jsdelivr.net/npm/p5@1/lib/p5.min.js"></script>
             <script src="js/draw.js"></script>
