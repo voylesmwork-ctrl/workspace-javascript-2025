@@ -437,7 +437,7 @@
         <div class="practice">
             <h1>Change Attribute -- Rolling a dice </h1>
             <p> <input type="button" id="roll" value="roll" /> </p>
-            <p> <img src="img/die1.png"> </p>
+            <p> <img id="dieImg" src="img/die1.png"> </p>
             <table>
                 <tr>
                     <th>Result</th>
@@ -458,6 +458,23 @@
                     <td id="r6"></td>
                 </tr>
             </table>
+
+            <script>
+                var stats = [0,0,0,0,0,0];
+                function rollDie() {
+                    var num = Math.floor(Math.random()*6 + 1);
+                    console.log(num);
+                    var dieRef = document.getElementById('dieImg');
+                    dieRef.setAttribute('src', "img/die" + num + ".png");
+                    stats[num-1]++;
+
+                    for (var i = 1; i < 7; i++) {
+                        document.getElementById('r' + i).textContent = stats[i-1];
+                    }
+                }
+
+                document.getElementById('roll').addEventListener('click', rollDie, false);
+            </script>
 
         </div>
 
@@ -480,7 +497,9 @@
                 <img src="img/usca5.jpg" alt="usca">
             </div>
             <script>
-
+                var index = 0;
+                var imagelist = document.querySelectorAll('.img-container-hide');
+                imagelist[index].setAttribute('class', "img-container");
             </script>
 
 
