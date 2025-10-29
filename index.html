@@ -500,6 +500,13 @@
                 var index = 0;
                 var imagelist = document.querySelectorAll('.img-container-hide');
                 imagelist[index].setAttribute('class', "img-container");
+                function imageChange() {
+                    imagelist[index].setAttribute('class', "img-container-hide");
+                    index++;
+                    index = index % 5;
+                    imagelist[index].setAttribute('class', "img-container");
+                }
+                setInterval(imageChange, 5000);
             </script>
 
 
