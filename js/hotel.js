@@ -4,9 +4,8 @@ var guest = {
     checkOut: "Oct 17, 2025",
     numGuests: 4,
     roomType: "suite",
-    otherGuests: ["Mike", "Cindy", "Sally"],
     display: function() {
-        return this.name + this.otherGuests;
+        return this.name;
     }
 };
 
@@ -21,7 +20,6 @@ function reservation() {
         roomType: document.getElementById('room').value
     };
     guestGroup.push(guest);
-    console.log(guestGroup);
 }
 
 function listReservations() {
